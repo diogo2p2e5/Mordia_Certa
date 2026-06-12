@@ -1,0 +1,27 @@
+ 
+USE MordidaCerta_DB;
+
+CREATE TABLE Categoria(
+	IdCategoria VARCHAR(40) PRIMARY KEY NOT NULL,
+	Titulo		VARCHAR(100)			NOT NULL
+);
+GO
+
+CREATE TABLE Comida(
+	IdComida	VARCHAR(40)	PRIMARY KEY NOT NULL,
+	Nome		VARCHAR(100)			NOT NULL,
+	Imagem		VARCHAR(100),
+	IdCategoria	VARCHAR(40)	FOREIGN KEY REFERENCES Categoria(IdCategoria)
+ 
+);
+
+CREATE TABLE Usuario(
+	IdUsuario	VARCHAR(40) PRIMARY KEY NOT NULL,
+	Nome		VARCHAR(100)			NOT NULL,
+	Senha		VARCHAR(60)				NOT NULL,
+	Email		VARCHAR(256) UNIQUE		NOT NULL
+
+);
+
+
+
